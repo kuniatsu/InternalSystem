@@ -1,0 +1,55 @@
+      <!--------------------------↓利益見積もり↓------------------------>
+      <div id="jobCalcDisp">
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="addEvent();"><i class="glyphicon glyphicon-th-list"></i> 一覧</button>
+                <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> 案件追加</button>
+                <button id="filter_id" class="btn btn-info"><i class="glyphicon glyphicon-search"></i> フィルタ</button>
+                <button class="btn btn-warning"><i class="glyphicon glyphicon-cog"></i> 設定</button>
+              </div>
+
+              <div id="filterBox_id"style="margin-top:30px">
+                <form class="form-inline" style="margin-bottom:15px;">
+                  <div class="form-group">
+                    <input type="text" id="" class="form-control" placeholder="フィルタ：キーワード検索">
+                  </div>
+                </form>
+              </div>
+
+              <div id="iframe_id">
+                <iframe src="gochart.html" name="sample" id="chartId" class="iframeClass"></iframe>
+                <iframe src="gochart2.html" name="sample" id="chartId2" class="iframeClass"></iframe>
+                <div>
+                  <button class="btn btn-primary changeChart">⬅︎</button>
+                  <button class="btn btn-primary changeChart">➡︎</button>
+                </div>
+              </div>
+
+
+              <table id="jobList_id" class="table table-striped table-bordered table-hover table-condensed" style="margin-top:30px">
+                <thead>
+                  <tr><th>案件名</th><th>売上</th><th>利益</th><th>期限</th></tr>
+                </thead>
+                <tbody>
+
+                  <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+                  <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+                  <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+                  <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+                  <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+                  <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+                  <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+                  <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+                  <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+                  <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+                  <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+                  <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+                  <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+                  <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+                  <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+                </tbody>
+              </table>
+              <img id='loadImg' src='img/icon_loader.gif'>
+      </div>
+      <!--------------------------↑利益見積もり↑------------------------>
+      <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+      <script src="js/jobList.js"></script>

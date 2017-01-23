@@ -1,0 +1,147 @@
+
+
+  <script>
+    var app = angular.module('app', [])
+    app.controller('myController', function($scope) {
+      $scope.sortlist = function (){
+        $scope.searchText = "有給";
+      }
+
+      $scope.pulslist = function (){
+        alert("");
+        $scope.searchText = "有給";
+      }
+
+      this.members = [
+        {no:2, name: '有休:',    age:'1/2',   value:"私用",pay:0  },
+        {no:3, name: '交通費:',  age:'1/3',  value:"Suicaチャージ",pay:5000  },
+        {no:5, name: '有休:',    age:'1/5',  value:"私用",pay:0  },
+        {no:7, name: '交通費:',  age:'1/7',  value:"定期購入",pay:20000  },
+        {no:8, name: '有休:',    age:'1/8',  value:"私用",pay:0  },
+        {no:7, name: '交通費:',   age:'1/15', value:"Suicaチャージ",pay:20000  },
+        {no:1, name: '実績:本社', age:'1/1',  value:"",pay:0,time:"9:00〜17:00" },
+        {no:2, name: '実績:本社', age:'1/2',  value:"",pay:0,time:"9:00〜17:00"  },
+        {no:3, name: '実績:本社', age:'1/3',  value:"",pay:0,time:"9:00〜18:00"  },
+        {no:4, name: '実績:本社', age:'1/4',  value:"",pay:0,time:"9:00〜17:00"  },
+        {no:5, name: '実績:本社', age:'1/5',  value:"",pay:0,time:"9:00〜17:00"  },
+        {no:6, name: '実績:本社', age:'1/6',  value:"",pay:0,time:"9:00〜17:00"  },
+        {no:7, name: '実績:本社', age:'1/7',  value:"",pay:0,time:"9:00〜17:00"  },
+        {no:8, name: '実績:本社', age:'1/8',  value:"",pay:0,time:"9:00〜17:00"  },
+        {no:9, name: '実績:本社', age:'1/9',  value:"",pay:0,time:"9:00〜18:00"  },
+        {no:10,name: '実績:本社', age:'1/10', value:"",pay:0,time:"9:00〜17:00"  },
+        {no:7, name: '実績:本社', age:'1/7',  value:"",pay:0,time:"9:00〜17:00"  },
+        {no:11, name: '実績:本社', age:'1/11',value:"",pay:0,time:"9:00〜17:00"  },
+        {no:12, name: '実績:本社', age:'1/12',value:"",pay:0,time:"9:00〜17:00"  },
+        {no:13, name: '実績:本社', age:'1/13',value:"",pay:0,time:"9:00〜17:00"  },
+        {no:14, name: '実績:本社', age:'1/14',value:"",pay:0,time:"9:00〜17:00"  },
+        {no:15, name: '実績:本社', age:'1/15',value:"",pay:0,time:"9:00〜17:00"  }
+
+      ];
+    });
+  </script>
+  <script>
+    $(function(){
+      $('#pulslistPopup').click(function(){
+        alert("");
+      });
+
+      $('#mydate').datepicker({language: 'ja'});
+    });
+  </script>
+    <div id="container_id" class="container" style="padding:80px 300px">
+      <ul class="nav nav-tabs" style="margin-bottom:15px;">
+        <li class="active"><a href="#home" data-toggle="tab"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+        <li>               <a href="#about" data-toggle="tab"><i class="glyphicon glyphicon-calendar"></i></a></li>
+        <li>               <a href="#all" data-toggle="tab"><i class="glyphicon glyphicon-th-list"></i></a></li>
+        <li class="navbar-right"><a href="" data-toggle="modal" data-target="#modal-example"><i class="glyphicon glyphicon-plus"></i></a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="home">
+          <div ng-controller="myController as myCtrl">
+            <div class="input-group">
+
+            	<input type="text" id="area" ng-model="searchText" class="form-control" placeholder="有給・交通費・実績" autocomplete="on" list="titleList">
+              <datalist id="titleList">
+                  <option value="実績">
+                  <option value="有給">
+                  <option value="交通費">
+                  <option value="旅費">
+              </datalist>
+
+            	<span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="sortlist()"><i class="glyphicon glyphicon-filter"></i></button>
+            	</span>
+            </div>
+            <table class="table table-striped table-bordered table-hover table-condensed">
+              <section class="list1">
+              <tr ng-repeat="member in myCtrl.members|filter:searchText|orderBy:'no'">
+                  <td> {{member.age}}</td><td>{{member.name}}{{member.value}}</td><td>{{(member.pay==0||member.pay==null)?(member.time==null?"なし":member.time):"¥"+member.pay;}}</td>
+              </tr>
+              </section>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane" id="about">
+          <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=i8g6891igibkdm2o4r4lh0sp64%40group.calendar.google.com&amp;color=%230F4B38&amp;ctz=Asia%2FTokyo" style="border-width:0" width="500" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="tab-pane" id="all">
+          全体表示
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- 2.モーダルの配置 -->
+    <div class="modal" id="modal-example" tabindex="-1">
+        <div class="modal-dialog">
+            <!-- 3.モーダルのコンテンツ -->
+            <div class="modal-content">
+                <!-- 4.モーダルのヘッダ -->
+                <div class="modal-header">
+                    <div class="radio">
+                      <label><input type="radio" name="radio" id="radio1" value="radio1"> 実績</label>
+                      <label><input type="radio" name="radio" id="radio2" value="radio2"> 有給</label>
+                      <label><input type="radio" name="radio" id="radio3" value="radio3"> 交通費</label>
+                      <label><input type="radio" name="radio" id="radio4" value="radio4"> その他</label>
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">タイトル</span>
+                      <input type="text" class="form-control" aria-describedby="basic-addon1" >
+                    </div>
+
+                </div>
+                <!-- 5.モーダルのボディ -->
+                <div class="modal-body">
+
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">  内容  </span>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                  </div>
+
+
+
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">日付</span>
+                    <input type="text" class="form-control" id="mydate">
+                  </div>
+
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">時間</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">金額</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+                <!-- 6.モーダルのフッタ -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default ">承認</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-primary" id="pulslistPopup">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
