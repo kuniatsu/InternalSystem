@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sample Google Charts</title>
+</head>
+<body>
+
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    (function(){
+      abc();
+    })();
+    function abc(){
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(function(){
+        var data = google.visualization.arrayToDataTable([
+          ['種別', '利益'],
+          ['A人件費', 7],
+          ['B人件費', 7],
+          ['C人件費', 7],
+          ['利益', 2]
+        ]);
+        var options = {
+          title: '利益率',
+          is3D: true
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('gct_sample_pie'));
+        chart.draw(data, options);
+      });
+
+    }
+
+
+  </script>
+  <div id="gct_sample_pie"></div>
+</body>
+</html>

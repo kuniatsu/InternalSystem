@@ -1,0 +1,68 @@
+      <!--------------------------↓利益見積もり↓------------------------>
+      <div id="jobCalcDisp">
+      </div>
+      <!--------------------------↑利益見積もり↑------------------------>
+
+      <ul class="nav nav-tabs" style="margin-bottom:15px;">
+        <li class="active"><a href="#home" data-toggle="tab">2017<span id="tabname"></span></a></li>
+        <li>               <a href="#about" data-toggle="tab">2016</a></li>
+        <li><a href="#all" data-toggle="tab">2015</a></li>
+      </ul>
+      <div class="tab-content">
+      <div class="tab-pane active" id="home">
+
+          <!--フィルタ-->
+          <input type="text" id="ankenfilter" class="form-control" placeholder="案件名を入力" autocomplete="on" list="titleList">
+          <!--フィルタ-->
+
+
+          <div id="iframe_id">
+            <iframe src="anken.html"    name="sample" id="chartId" class="iframeClass2"></iframe>
+            <iframe src="gochart.html"　name="sample" id="chartId2" class="iframeClass2"></iframe>
+            <iframe src="gochart2.html" name="sample" id="chartId3" class="iframeClass2"></iframe>
+            <div>
+              <ul class="pagination">
+               <li class="changeChart"><a href="javascript:void(0);">&laquo;</a></li>
+               <li id="ankenPageNum1" class="active"><a href="javascript:void(0)" onclick="changeChartNum(1)">1</a></li>
+               <li id="ankenPageNum2" class=""><a href="javascript:void(0);" onclick="changeChartNum(2)">2</a></li>
+               <li id="ankenPageNum3" class=""><a href="javascript:void(0);" onclick="changeChartNum(3)">3</a></li>
+               <li class="changeChart"><a href="javascript:void(0);">&raquo;</a></li>
+             　</ul>
+            </div>
+          </div>
+
+
+          <table id="jobList_id" class="table table-striped table-bordered table-hover table-condensed" style="margin-top:30px">
+            <thead>
+              <tr><th>案件名</th><th>売上</th><th>利益</th><th>期限</th></tr>
+            </thead>
+            <tbody>
+
+              <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+              <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+              <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+              <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+              <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+              <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+              <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+              <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+              <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+              <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+              <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+              <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+              <tr class="chartDisp"><td>総合試験</td><td>¥200</td><td>¥200</td><td>2017/1/1</td></tr>
+              <tr class="chartDisp"><td>ドキュメント作成支援</td><td>¥300</td><td>¥200</td><td>2017/1/2</td></tr>
+              <tr class="chartDisp"><td>派遣</td><td>¥240</td><td>¥200</td><td>2017/1/3</td></tr>
+            </tbody>
+          </table>
+          <img id='loadImg' src='img/icon_loader.gif'>
+      </div>
+      <div class="tab-pane" id="about">
+            <p>たぶ２</p>
+      </div>
+      <div class="tab-pane" id="all">
+            <p>たぶ３</p>
+      </div>
+
+      <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+      <script src="js/jobList.js"></script>

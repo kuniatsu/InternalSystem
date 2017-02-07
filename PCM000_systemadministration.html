@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>システム管理画面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bs-button-style.css">
+    <link rel="stylesheet" href="css/bs-button-style.min.css">
+    <style>
+    /*↓cssの記述はこちらへ↓*/
+        ::-moz-placeholder {
+            font-size: 11px;
+        }
+         #btn_add{
+            margin:10px 5px;
+        } 
+        #btn_del{
+            margin:10px 5px;
+        } 
+    /*↑cssの記述はこちらへ↑*/
+    </style>
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap-3.3.7-dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker-1.6.4-dist/locales/bootstrap-datepicker.ja.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/dayReportjQuery.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+    /*　↓jsの記述はこちらへ↓　*/
+    /*　↑jsの記述はこちらへ↑　*/
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <span class="navbar-header headerSize">
+        <a class="navbar-brand" href="PCM002_main.html">株式会社CEVOL</a>
+        <ul class="nav navbar-nav navbar-right hidden-xs" style="padding-right:40px">
+          <li><a href="login-.html" id="username"></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right visible-xs" style="position: absolute;right:25px;top:9px">
+          <li><i class="glyphicon glyphicon-align-justify"></i></li>
+        </ul>
+      </span>
+    </nav>
+
+    <div id="container_id"  style="padding:80px 0px">
+      <span id="mainDisp">
+        <div class="col-sm-2" id="sidebar">
+          <div id="sidebar_menu" class="panel panel-primary hidden-xs">
+            <div class="panel-heading">
+              <i class="glyphicon glyphicon-time"></i> アクセス履歴
+            </div>
+            <ul>
+              <li>案件登録</li>
+              <li>出勤簿</li>
+              <li>旅費精算</li>
+              <li>出張費精算</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div id="mainColumn" >
+            <!-- ↓htmlはこちらへ↓ -->
+              <ul class="pagination pagination-sm">
+                  <li class="disabled"><a href="#">«</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li class="disabled"><a href="#">2</a></li>
+                  <li class="disabled"><a href="#">3</a></li>
+                  <li class="disabled"><a href="#">4</a></li>
+                  <li class="disabled"><a href="#">5</a></li>
+                  <li class="disabled"><a href="#">»</a></li>
+              </ul>
+
+                   <div class="input-group">
+                       <table class="table table-bordered" id="tbl_personal">
+                           <tr class="active">
+                               <th class="text-center">社員番号</th>
+                               <th class="text-center">社員名</th>
+                               <th class="text-center">所属事業部</th>
+                               <th class="text-center">所属グループ</th>
+                               <th class="text-center">単価</th>
+                               <th class="text-center">残業代</th>
+                               <th class="text-center">役職</th>
+                               <th class="text-center">ユーザーID</th>
+                               <th class="text-center">パスワード</th>
+                               <th class="text-center">適用開始日</th>
+                               <th class="text-center">設定／削除</th>
+                           </tr>
+                           <tr>
+                               <td><input style="width:110px;" type="text" class="form-control input-xs" id="usage1input3" placeholder="10桁以内"></td>
+                               <td><input style="width:170px;" type="text" class="form-control input-xs" id="usage1input3" placeholder="全角25文字(半角50文字)以内"></td>
+                                <td><select style="width: 120px" class="form-control input-xs" id="usage1select2">
+                                   <option></option>
+                                   <option>東京事業部</option>
+                                   <option>茨城事業部</option>
+                                   </select></td>
+                               <td><select style="width: 150px" class="form-control input-xs" id="usage1select2">
+                                   <option></option>
+                                   <option>管理本部</option>
+                                   <option>アウトソーシング</option>
+                                   <option>第1グループ</option>
+                                   <option>第2グループ</option>
+                                   <option>第3グループ</option>
+                                   </select></td>
+                               <td><input style="width:100px;" type="text" class="form-control input-xs" id="usage1input3" placeholder="7桁以内"></td>
+                               <td><input style="width:100px;" type="text" class="form-control input-xs" id="usage1input3" placeholder="7桁以内"></td>
+                               <td><select style="width: 100px" class="form-control input-xs" id="usage1select2">
+                                   <option></option>
+                                   <option>役員</option>
+                                   <option>管理職</option>
+                                   <option>総務</option>
+                                   <option>一般</option>
+                               </td>
+                               <td><input style="width:110px;" type="text" class="form-control input-xs" id="usage1input3" placeholder="半角10文字以内"></td>
+                               <td><input style="width:110px;" type="text" class="form-control input-xs" id="usage1input3" placeholder="半角12文字以内"></td>
+                               <td><input style="width:100px;" type="text" class="form-control input-xs bsDate" id="usage1input3 #mydate"></td>
+                               <td><span class="input-group-btn ">
+                                   <button type="button" class="btn btn-primary btn-sm">設定</button>
+                                   </span>
+                                   <span class="input-group-btn">
+                                   <button type="button" class="btn btn-danger btn-sm" onClick="disp()">削除</button>
+                                   </span></td>
+                           </tr>                          
+                       </table>
+              </div>
+               <div id="btn_add" style="float:left;">
+                  <button type="button" class="btn btn-success btn-xs" onclick="add_row_p();"><span class="glyphicon glyphicon-plus"></span>登録欄追加</button>
+              </div>
+              <div id="btn_del">
+                  <button id="del_p" type="button" class="btn btn-warning btn-xs" onclick="del();" disabled><span class="glyphicon glyphicon-minus"></span>登録欄削除</button>
+                  </div>
+              <div style="margin-top:40px;">
+                  <button type="button" class="btn btn-primary">メインメニュー画面へ</button>
+              </div>
+            <!-- ↑htmlはこちらへ↑ -->
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>特休・公休設定</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/index.css">
+　　 <link rel="stylesheet" href="css/bs-button-style.min.css">
+    <link rel="stylesheet" href="css/bs-button-style.css">  
+    <style>
+        /*↓cssの記述はこちらへ↓*/
+        #btn_add{
+            margin:10px 5px;
+        } 
+        #btn_del{
+            margin:10px 5px;
+        } 
+    /*↑cssの記述はこちらへ↑*/
+    </style>
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap-3.3.7-dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker-1.6.4-dist/locales/bootstrap-datepicker.ja.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/dayReportjQuery.js"></script>
+    <script src="js/common.js"></script>
+    <script> 
+    /*↓jsの記述はこちらへ↓*/
+    /*↑jsの記述はこちらへ↑*/
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <span class="navbar-header headerSize">
+        <a class="navbar-brand" href="PCM002_main.html">株式会社CEVOL</a>
+        <ul class="nav navbar-nav navbar-right hidden-xs" style="padding-right:40px">
+          <li><a href="login-.html" id="username"></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right visible-xs" style="position: absolute;right:25px;top:9px">
+          <li><i class="glyphicon glyphicon-align-justify"></i></li>
+        </ul>
+      </span>
+    </nav>
+
+    <div id="container_id" class="container" style="padding:80px 300px">
+      <span id="mainDisp">
+        <div class="col-sm-3" id="sidebar">
+          <div id="sidebar_menu" class="panel panel-primary hidden-xs">
+            <div class="panel-heading">
+              <i class="glyphicon glyphicon-time"></i> アクセス履歴
+            </div>
+            <ul>
+              <li>案件登録</li>
+              <li>出勤簿</li>
+              <li>旅費精算</li>
+              <li>出張費精算</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div id="mainColumn" >
+            <!-- ↓htmlはこちらへ↓ -->  
+                   <div class="input-group">
+                       <table class="table table-bordered" id="tbl_holiday">
+                           <tr class="active">
+                               <th class="text-center">設定日</th>
+                               <th class="text-center">祝日設定</th>
+                               <th class="text-center">祝日名称</th>
+                               <th class="text-center">設定／削除</th>
+                           </tr>
+                           <tr>
+                               <td><input style="width:150px;" type="text" class="form-control bsDate" id="usage1input3 #mydate"></td>
+                               <td><select style="width: 100px" class="form-control" id="usage1select2">
+                                   <option>特休</option>
+                                   <option>公休</option>
+                                   </select></td>
+                               <td><input style="width:250px;" type="text" class="form-control" id="usage1input3" placeholder="全角15文字(半角30文字)以内"></td>
+                               <td><span class="input-group-btn">
+                                   <button type="button" class="btn btn-primary">設定</button>
+                                   </span>
+                                   <span class="input-group-btn">
+                                   <button type="button" class="btn btn-danger" onClick="disp()">削除</button>
+                                   </span></td>
+                           </tr>
+                       </table>
+              </div>
+              <div id="btn_add" style="float:left;">
+                  <button type="button" class="btn btn-success btn-xs" onclick="add_row();"><span class="glyphicon glyphicon-plus"></span>登録欄追加</button>
+              </div>
+              <div id="btn_del">
+                  <button id="del" type="button" class="btn btn-warning btn-xs" onclick="del_row();" disabled><span class="glyphicon glyphicon-minus"></span>登録欄削除</button>
+                  </div>
+              <div style="margin-top:40px;">
+                  <button type="button" class="btn btn-primary">メインメニュー画面へ</button>
+              </div>
+
+            <!-- ↑htmlはこちらへ↑ -->
+          </div>
+        </div>
+      </span>
+    </div>
+
+
+
+
+
+  </body>
+</html>
