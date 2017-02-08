@@ -20,20 +20,24 @@
   <body>
 
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-header">
+      <span class="navbar-header headerSize">
         <a class="navbar-brand" href="PCM002_main.html">株式会社CEVOL</a>
-      </div>
-      <span id="headerhidden" style="display:none">
-        <ul class="nav navbar-nav navbar-right" style="padding-right:40px">
+        <ul class="nav navbar-nav navbar-right hidden-xs" style="padding-right:40px">
           <li><a href="login-.html" id="username"></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right visible-xs" style="position: absolute;right:25px;top:9px">
+          <li><i class="glyphicon glyphicon-align-justify"></i></li>
         </ul>
       </span>
     </nav>
 
-    <div id="container_id" class="container" style="padding:80px 300px">
+
+    <div id="container_id" class="container" style="padding-top:80px">
       <span id="mainDisp">
+
+
         <div class="sidebar" id="sidebar">
-          <div id="sidebar_menu" class="panel panel-primary">
+          <div id="sidebar_menu" class="panel panel-primary hidden-xs">
             <div class="panel-heading">
               <i class="glyphicon glyphicon-time"></i> アクセス履歴
             </div>
@@ -46,12 +50,11 @@
           </div>
         </div>
 
-        <div class="mainBox">
+        <div class="mainBox col-xs-12">
           <div id="mainColumn" >
             <!--メイン-->
             <div class="panel panel-primary mainPageList" id="child"><h2>案件登録</h2></div>
             <div class="panel panel-primary mainPageList" id="child2"><h2>出勤簿</h2></div>
-            <!-- <div class="panel panel-primary mainPageList" id="child3"><h2>旅費精算</h2></div> -->
             <div class="panel panel-primary mainPageList" id="child3"><h2>経費設定</h2></div>
             <div class="panel panel-primary mainPageList" id="child4"><h2>共通設定</h2></div>
             <!--メイン-->
